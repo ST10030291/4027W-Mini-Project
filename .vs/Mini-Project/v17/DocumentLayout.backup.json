@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\repos_uct\\Mini-Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\models\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\models\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\firebaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\firebaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Mini-Project\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Mini-Project\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAG8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-06T17:19:14.328Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserDetails.cs",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Models\\UserDetails.cs",
+              "RelativeDocumentMoniker": "Mini-Project\\Models\\UserDetails.cs",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Models\\UserDetails.cs",
+              "RelativeToolTip": "Mini-Project\\Models\\UserDetails.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAwwBEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T17:21:35.274Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Mini-Project\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Mini-Project\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwCIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T17:19:21.874Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Home\\Register.cshtml",
+              "RelativeDocumentMoniker": "Mini-Project\\Views\\Home\\Register.cshtml",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Home\\Register.cshtml",
+              "RelativeToolTip": "Mini-Project\\Views\\Home\\Register.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAiwF0AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T17:24:21.295Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "Mini-Project\\Views\\Home\\Login.cshtml",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "Mini-Project\\Views\\Home\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T17:24:43.459Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Mini-Project\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Mini-Project\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-07T23:32:10.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FirebaseConfig.cs",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\FirebaseConfig.cs",
+              "RelativeDocumentMoniker": "Mini-Project\\FirebaseConfig.cs",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\FirebaseConfig.cs",
+              "RelativeToolTip": "Mini-Project\\FirebaseConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T19:47:50.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Program.cs",
+              "RelativeDocumentMoniker": "Mini-Project\\Program.cs",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Program.cs",
+              "RelativeToolTip": "Mini-Project\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T18:27:05.613Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

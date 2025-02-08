@@ -1,0 +1,112 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: gray;
+    color:white;
+    height: auto;
+    width: auto;
+    border: 2px solid #264143;
+    border-radius: 20px;
+    box-shadow: 3px 4px 0px 1px gray;
+}
+
+.title {
+    color: white;
+    font-weight: 900;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.sub_title {
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 10px;
+}
+
+.form_style {
+    outline: none;
+    border: 2px solid #264143;
+    box-shadow: 3px 4px 0px 1px gray;
+    width: 290px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+    .form_style:focus, .btn:focus {
+        transform: translateY(4px);
+        box-shadow: 1px 2px 0px 0px gray;
+    }
+
+.btn {
+    padding: 15px;
+    margin: 25px 0px;
+    width: 290px;
+    font-size: 15px;
+    background: black;
+    color:white;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: gray;
+}
+
+    .btn:hover {
+        opacity: .9;
+    }
+
+.link {
+    font-weight: 500;
+    color: white;
+    padding: 5px;
+    text-decoration:none;
+}
+
+.linkk {
+    font-weight: 800;
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+}
+
+    .link:hover {
+        color:black;
+    }

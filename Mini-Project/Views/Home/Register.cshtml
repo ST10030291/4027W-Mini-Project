@@ -1,0 +1,96 @@
+﻿@model Mini_Project.Models.UserDetails
+
+@{
+    ViewData["Title"] = "User Registration";
+}
+
+<h1>User Registration</h1>
+
+<!-- ✅ Display Success or Error Messages -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<form asp-action="SaveUserDetails" method="post">
+    <div class="form_group">
+        <label asp-for="Username">Username</label>
+        <input asp-for="Username" class="form-control" required />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+
+    <div class="form_group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" type="email" class="form-control" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form_group">
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" type="password" class="form-control" required />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form_group">
+        <label asp-for="Age">Age</label>
+        <input asp-for="Age" type="number" class="form-control" min="18" max="100" required />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form_group">
+        <label asp-for="Gender">Gender</label>
+        <select asp-for="Gender" class="form-control" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <div class="form_group">
+        <label asp-for="Province">Province</label>
+        <select asp-for="Province" class="form-control" required>
+            <option value="">Select a Province</option>
+            <option value="Eastern Cape">Eastern Cape</option>
+            <option value="Free State">Free State</option>
+            <option value="Gauteng">Gauteng</option>
+            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+            <option value="Limpopo">Limpopo</option>
+            <option value="Mpumalanga">Mpumalanga</option>
+            <option value="North West">North West</option>
+            <option value="Northern Cape">Northern Cape</option>
+            <option value="Western Cape">Western Cape</option>
+        </select>
+        <span asp-validation-for="Province" class="text-danger"></span>
+    </div>
+
+    <div class="form_group">
+        <label asp-for="FestivalAttendanceAmt">Festival Attendance Amount</label>
+        <input asp-for="FestivalAttendanceAmt" type="number" class="form-control" min="0" required />
+        <span asp-validation-for="FestivalAttendanceAmt" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn">Register</button>
+    <p>Have an Account? <a class="linkk" href="/Home/Login">Login Here!</a></p><a class="link" href="">
+    </a>
+</form>
