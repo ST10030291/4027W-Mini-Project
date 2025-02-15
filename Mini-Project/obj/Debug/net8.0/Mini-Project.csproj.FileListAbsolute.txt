@@ -58,4 +58,6 @@ D:\repos_uct\Mini-Project\Mini-Project\obj\Debug\net8.0\refint\Mini-Project.dll
 D:\repos_uct\Mini-Project\Mini-Project\obj\Debug\net8.0\Mini-Project.pdb
 D:\repos_uct\Mini-Project\Mini-Project\obj\Debug\net8.0\Mini-Project.genruntimeconfig.cache
 D:\repos_uct\Mini-Project\Mini-Project\obj\Debug\net8.0\ref\Mini-Project.dll
-D:\repos_uct\Mini-Project\Mini-Project\bin\Debug\net8.0\w-mini-project-firebase-adminsdk-fbsvc-0d50a2760b.json
+D:\repos_uct\Mini-Project\Mini-Project\obj\Debug\net8.0\Mini-Project.sourcelink.json
+D:\repos_uct\Mini-Project\Mini-Project\bin\Debug\net8.0\w-mini-project-firebase-adminsdk-fbsvc-a9fe6ac77d.json
+D:\repos_uct\Mini-Project\Mini-Project\bin\Debug\net8.0\RestSharp.dll

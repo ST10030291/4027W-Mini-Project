@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9N+EQOouMIdORdvxAnCIR94jp4LzvNN9Bgihe9yZeII=",
+  "Hash": "SfuEgo1LzAie+4NrS+o/1MQG46MkeiJWOd4xsZbddyM=",
   "Source": "Mini-Project",
   "BasePath": "_content/Mini-Project",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "p2pe45jm3d",
-      "Integrity": "cd4kcPxje496eqPPILCv0IwW8KjZprSh32LshpAPyOA=",
+      "Fingerprint": "1gazet5vh6",
+      "Integrity": "X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -99,6 +99,111 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\delete_icon.png",
+      "SourceId": "Mini-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\",
+      "BasePath": "_content/Mini-Project",
+      "RelativePath": "Images/delete_icon#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tr66yvceki",
+      "Integrity": "yeWd/sEuOWhyWhQN4QnIVOx+a0KhSB6cA6m/PgncA9Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\delete_icon.png"
+    },
+    {
+      "Identity": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image1.jpg",
+      "SourceId": "Mini-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\",
+      "BasePath": "_content/Mini-Project",
+      "RelativePath": "Images/Image1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0de1jeufk3",
+      "Integrity": "DHZ55WjYhX//A5XJJU8/j09SLsAVcW+emffJ8wlpuko=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Image1.jpg"
+    },
+    {
+      "Identity": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image2.jpg",
+      "SourceId": "Mini-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\",
+      "BasePath": "_content/Mini-Project",
+      "RelativePath": "Images/Image2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bss4aybscf",
+      "Integrity": "uyz6uEStJ+drcaTpOsjnTgHxG7TVneKF7lAHmSST0Qc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Image2.jpg"
+    },
+    {
+      "Identity": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image3.jpg",
+      "SourceId": "Mini-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\",
+      "BasePath": "_content/Mini-Project",
+      "RelativePath": "Images/Image3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "r23b5t98jz",
+      "Integrity": "Uy3Vdg6fqV9Mi8SPdqiAC8tPP5Y+A2n/6IG54aUCHp8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Image3.jpg"
+    },
+    {
+      "Identity": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\logo.jpg",
+      "SourceId": "Mini-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\",
+      "BasePath": "_content/Mini-Project",
+      "RelativePath": "Images/logo#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "snyu4pu16t",
+      "Integrity": "+LIiKefO+/0+1Wez8q/CcJqcYOJMAcB0G6Dco6vWRpw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\logo.jpg"
     },
     {
       "Identity": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\js\\site.js",
@@ -1321,6 +1426,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/site.1gazet5vh6.css",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7721"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Feb 2025 17:45:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1gazet5vh6"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1331,7 +1481,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1941"
+          "Value": "7721"
         },
         {
           "Name": "Content-Type",
@@ -1339,11 +1489,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cd4kcPxje496eqPPILCv0IwW8KjZprSh32LshpAPyOA=\""
+          "Value": "\"X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 07 Feb 2025 23:31:22 GMT"
+          "Value": "Wed, 12 Feb 2025 17:45:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1353,52 +1503,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-cd4kcPxje496eqPPILCv0IwW8KjZprSh32LshpAPyOA="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.p2pe45jm3d.css",
-      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1941"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"cd4kcPxje496eqPPILCv0IwW8KjZprSh32LshpAPyOA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 07 Feb 2025 23:31:22 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "p2pe45jm3d"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-cd4kcPxje496eqPPILCv0IwW8KjZprSh32LshpAPyOA="
+          "Value": "sha256-X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k="
         }
       ]
     },
@@ -1481,6 +1586,416 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "Images/delete_icon.png",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\delete_icon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "995"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yeWd/sEuOWhyWhQN4QnIVOx+a0KhSB6cA6m/PgncA9Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 17:31:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yeWd/sEuOWhyWhQN4QnIVOx+a0KhSB6cA6m/PgncA9Q="
+        }
+      ]
+    },
+    {
+      "Route": "Images/delete_icon.tr66yvceki.png",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\delete_icon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "995"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yeWd/sEuOWhyWhQN4QnIVOx+a0KhSB6cA6m/PgncA9Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 17:31:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tr66yvceki"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/delete_icon.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yeWd/sEuOWhyWhQN4QnIVOx+a0KhSB6cA6m/PgncA9Q="
+        }
+      ]
+    },
+    {
+      "Route": "Images/Image1.0de1jeufk3.jpg",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31369"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DHZ55WjYhX//A5XJJU8/j09SLsAVcW+emffJ8wlpuko=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 11:15:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0de1jeufk3"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/Image1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DHZ55WjYhX//A5XJJU8/j09SLsAVcW+emffJ8wlpuko="
+        }
+      ]
+    },
+    {
+      "Route": "Images/Image1.jpg",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31369"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DHZ55WjYhX//A5XJJU8/j09SLsAVcW+emffJ8wlpuko=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 11:15:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DHZ55WjYhX//A5XJJU8/j09SLsAVcW+emffJ8wlpuko="
+        }
+      ]
+    },
+    {
+      "Route": "Images/Image2.bss4aybscf.jpg",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37924"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uyz6uEStJ+drcaTpOsjnTgHxG7TVneKF7lAHmSST0Qc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 11:15:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bss4aybscf"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/Image2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uyz6uEStJ+drcaTpOsjnTgHxG7TVneKF7lAHmSST0Qc="
+        }
+      ]
+    },
+    {
+      "Route": "Images/Image2.jpg",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37924"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uyz6uEStJ+drcaTpOsjnTgHxG7TVneKF7lAHmSST0Qc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 11:15:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uyz6uEStJ+drcaTpOsjnTgHxG7TVneKF7lAHmSST0Qc="
+        }
+      ]
+    },
+    {
+      "Route": "Images/Image3.jpg",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25544"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Uy3Vdg6fqV9Mi8SPdqiAC8tPP5Y+A2n/6IG54aUCHp8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 11:15:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Uy3Vdg6fqV9Mi8SPdqiAC8tPP5Y+A2n/6IG54aUCHp8="
+        }
+      ]
+    },
+    {
+      "Route": "Images/Image3.r23b5t98jz.jpg",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25544"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Uy3Vdg6fqV9Mi8SPdqiAC8tPP5Y+A2n/6IG54aUCHp8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 11:15:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r23b5t98jz"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/Image3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Uy3Vdg6fqV9Mi8SPdqiAC8tPP5Y+A2n/6IG54aUCHp8="
+        }
+      ]
+    },
+    {
+      "Route": "Images/logo.jpg",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16045"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+LIiKefO+/0+1Wez8q/CcJqcYOJMAcB0G6Dco6vWRpw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 23:03:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+LIiKefO+/0+1Wez8q/CcJqcYOJMAcB0G6Dco6vWRpw="
+        }
+      ]
+    },
+    {
+      "Route": "Images/logo.snyu4pu16t.jpg",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\logo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16045"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+LIiKefO+/0+1Wez8q/CcJqcYOJMAcB0G6Dco6vWRpw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 08 Feb 2025 23:03:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "snyu4pu16t"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/logo.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+LIiKefO+/0+1Wez8q/CcJqcYOJMAcB0G6Dco6vWRpw="
         }
       ]
     },

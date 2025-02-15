@@ -1,0 +1,178 @@
+﻿
+@{
+}
+
+<style>
+    .dashboard-wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .a {
+        text-decoration: none;
+    }
+
+    .dashboard-container {
+        width: 80%;
+    }
+
+    .top-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .manage-events-bubble,
+    .start-festival-bubble {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        width: 48%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .manage-events-title,
+    .start-festival-title {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* Button Styling */
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: none;
+        font:400;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .btn-create,
+    .btn-edit,
+    .btn-archive,
+    .btn-start {
+        background: black;
+        color: white;
+    }
+
+        .btn-create:hover,
+        .btn-edit:hover,
+        .btn-archive:hover,
+        .btn-start:hover {
+            background: gray;
+            color: white;
+        }
+
+    .btn-delete {
+        background: #dc3545;
+        color: black;
+    }
+
+        .btn-delete:hover {
+            background: #c82333;
+            color: black;
+        }
+
+    /* Event List Styling */
+    .event-list-container {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .event-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .event-table th,
+        .event-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+    .view-attendees-btn {
+        background: #17a2b8;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .view-attendees-btn:hover {
+            background: gray;
+            color: white;
+        }
+
+</style>
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-container">
+
+        <div class="top-section">
+            <!-- Manage Events Bubble -->
+            <div class="manage-events-bubble">
+                <h2 class="manage-events-title">Manage Events</h2>
+                <a asp-controller="Admin" asp-action="CreateEvent"><button class="btn btn-create">Create Event</button></a>
+                <a asp-controller="Admin" asp-action="EditEvent"><button class="btn btn-edit">Edit Event</button></a>
+                <a asp-controller="Admin" asp-action="DeleteEvent"><button class="btn btn-delete">Delete Event</button></a>
+            </div>
+
+            <!-- Start Festival Bubble -->
+            <div class="start-festival-bubble">
+                <h2 class="start-festival-title">Festival Management</h2>
+                <a asp-controller="Admin" asp-action="CreateFestival"><button class="btn btn-start">Start a Festival</button></a>
+                <a asp-controller="Admin" asp-action="ViewAllUsers"><button class="btn btn-start">View all Attendees</button></a>
+            </div>
+        </div>
+
+        <!-- Event List Below -->
+        <div class="event-list-container">
+            <h2 class="event-list-title">Event List</h2>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Location</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Attendee Limit</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cape Town Music Festival</td>
+                        <td>Green Point Stadium</td>
+                        <td>15 March 2025, 18:00</td>
+                        <td>16 March 2025, 02:00</td>
+                        <td>5000</td>
+                        <td><button class="view-attendees-btn">View RSVP Attendees</button></td>
+                    </tr>
+                    <tr>
+                        <td>Food & Wine Expo</td>
+                        <td>Cape Town International Convention Centre</td>
+                        <td>10 April 2025, 12:00</td>
+                        <td>10 April 2025, 22:00</td>
+                        <td>2000</td>
+                        <td><button class="view-attendees-btn">View RSVP Attendees</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Data points -->
+
+</div>

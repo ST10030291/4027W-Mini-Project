@@ -1,0 +1,98 @@
+﻿@model Mini_Project.Models.Event
+
+@{
+}
+
+<!-- Display Success or Error Messages -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<div class="container">
+    <div class="form_area">
+        <p class="title">Create Event</p>
+        <form asp-action="SaveEventDetails" method="post">
+            <div class="form_group">
+                <label asp-for="EventName">Event Name</label>
+                <input asp-for="EventName" class="form-control" required />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="Description">Description</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="Category">Category</label>
+                <select asp-for="Category" class="form-control">
+                    <option value="">Select Category</option>
+                    <option value="Music">Music</option>
+                    <option value="Food & Drink">Food & Drink</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Art & Culture">Art & Culture</option>
+                    <option value="Technology">Technology</option>
+                </select>
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="Location">Location</label>
+                <input asp-for="Location" class="form-control" required />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="StartTime">Start Time</label>
+                <input asp-for="StartTime" type="datetime-local" class="form-control" required />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="EndTime">End Time</label>
+                <input asp-for="EndTime" type="datetime-local" class="form-control" required />
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="RSVP_limit">RSVP Limit</label>
+                <input asp-for="RSVP_limit" type="number" class="form-control" min="1" required />
+                <span asp-validation-for="RSVP_limit" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="EventVisibility">Event Visibility</label>
+                <select asp-for="EventVisibility" class="form-control">
+                    <option value="true">Visible</option>
+                    <option value="false">Hidden</option>
+                </select>
+                <span asp-validation-for="EventVisibility" class="text-danger"></span>
+            </div>
+
+            <div>
+                <button type="submit" class="btn">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -4,6 +4,7 @@ using Google.Cloud.Firestore;
 using Microsoft.AspNetCore.Mvc;
 using Mini_Project.Models;
 using System.Threading.Tasks;
+using RestSharp;
 
 namespace Mini_Project.Controllers
 {
@@ -19,7 +20,7 @@ namespace Mini_Project.Controllers
             _logger = logger;
         }
 
-        // Register User Method
+        // Register User Method 
         [HttpPost]
         public async Task<IActionResult> SaveUserDetails(UserDetails model)
         {
@@ -27,23 +28,23 @@ namespace Mini_Project.Controllers
             {
                 var auth = FirebaseAuth.DefaultInstance;
 
-                // ✅ Check if a user with the given email already exists
+                // Check if a user with the given email already exists
                 try
                 {
                     var existingUser = await auth.GetUserByEmailAsync(model.Email);
                     ViewData["ErrorMessage"] = "A user with this email already exists. Please log in.";
-                    return View("Register"); // Stay on the same page!
+                    return View("Register"); 
                 }
                 catch (FirebaseAuthException ex)
                 {
                     if (ex.AuthErrorCode != AuthErrorCode.UserNotFound)
                     {
                         ViewData["ErrorMessage"] = $"Firebase Auth Error: {ex.Message}";
-                        return View("Register"); // Stay on the same page!
+                        return View("Register"); 
                     }
                 }
 
-                // ✅ Create user in Firebase Authentication
+                // Create user in Firebase Auth
                 var userRecordArgs = new UserRecordArgs()
                 {
                     Email = model.Email,
@@ -54,7 +55,7 @@ namespace Mini_Project.Controllers
                 var newUser = await auth.CreateUserAsync(userRecordArgs);
                 string uid = newUser.Uid;
 
-                // ✅ Save user details in Firestore
+                // Save user details in Firestore
                 CollectionReference usersCollection = _firestoreDb.Collection("Users");
                 var userData = new Dictionary<string, object>
         {
@@ -72,49 +73,103 @@ namespace Mini_Project.Controllers
                 await usersCollection.Document(uid).SetAsync(userData);
 
                 TempData["SuccessMessage"] = "User registered successfully!";
-                return RedirectToAction("Index"); // Redirect after successful registration
+                if (model.Role.ToLower() == "admin")
+                {
+                    return RedirectToAction("AdminDashboard");
+                }
+                else
+                {
+                    return RedirectToAction("VisitorDashboard");
+                }
             }
             catch (Exception ex)
             {
                 ViewData["ErrorMessage"] = $"Error: {ex.Message}";
-                return View("Register"); // Stay on the same page!
+                return View("Register");
             }
         }
 
-        // Process Login Form
-        [HttpPost]
-        public async Task<IActionResult> Login(UserDetails model)
+        // Login User
+        [HttpPost] 
+        public async Task<IActionResult> Login(Login model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
+                return View("Login");
+            }
+
+            try
+            {
+                var auth = FirebaseAuth.DefaultInstance;
+
+                // Check if the email exists in Firebase Auth
+                UserRecord userRecord;
                 try
                 {
-                    // Verify user credentials with Firebase
-                    var user = await FirebaseAuth.DefaultInstance.GetUserByEmailAsync(model.Email);
-
-                    if (user != null)
-                    {
-                        // Check if password matches - Firebase Auth handles password validation internally
-                        TempData["SuccessMessage"] = "Login successful! Welcome back.";
-                        Console.WriteLine("Login successful");
-                        return RedirectToAction("Index"); // Redirect to home page after successful login
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "Invalid email or password.");
-                    }
+                    userRecord = await auth.GetUserByEmailAsync(model.Email);
                 }
                 catch (FirebaseAuthException)
                 {
-                    ModelState.AddModelError("", "Invalid email or password.");
+                    ViewData["ErrorMessage"] = "Invalid email or password.";
+                    return View("Login");
                 }
-                catch (Exception ex)
+
+                // Verify password using Firebase REST API
+                string apiKey = "AIzaSyCSXynlYk7r4OS5dD7PmsUgYCzi2urRr5s";
+                string firebaseAuthUrl = $"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={apiKey}";
+
+                var client = new RestClient(firebaseAuthUrl);
+                var request = new RestRequest("", Method.Post);
+                request.AddJsonBody(new
                 {
-                    ModelState.AddModelError("", $"Error: {ex.Message}");
+                    email = model.Email,
+                    password = model.Password,
+                    returnSecureToken = true
+                });
+
+                var response = await client.ExecuteAsync(request);
+
+                if (!response.IsSuccessful)
+                {
+                    ViewData["ErrorMessage"] = "Invalid email or password.";
+                    return View("Login");
+                }
+
+                // Retrieve user role from Firestore based on email
+                var userQuery = _firestoreDb.Collection("Users").WhereEqualTo("Email", model.Email);
+                var userSnapshot = await userQuery.GetSnapshotAsync();
+
+                if (userSnapshot.Documents.Count == 0)
+                {
+                    ViewData["ErrorMessage"] = "User not found in Firestore.";
+                    return View("Login");
+                }
+
+                var userDoc = userSnapshot.Documents[0]; 
+                string role = userDoc.GetValue<string>("Role");
+
+                // Redirect based on role
+                if (role == "Admin")
+                {
+                    TempData["SuccessMessage"] = "Welcome, Admin!";
+                    return RedirectToAction("AdminDashboard", "Admin");
+                }
+                else if (role == "Visitor")
+                {
+                    TempData["SuccessMessage"] = "Welcome, Visitor!";
+                    return RedirectToAction("VisitorDashboard", "Visitor");
+                }
+                else
+                {
+                    ViewData["ErrorMessage"] = "Invalid role assigned.";
+                    return View("Login");
                 }
             }
-
-            return View(model); // Returns the login view if login fails
+            catch (Exception ex)
+            {
+                ViewData["ErrorMessage"] = $"Error: {ex.Message}";
+                return View("Login");
+            }
         }
 
         public IActionResult Index()
@@ -124,15 +179,22 @@ namespace Mini_Project.Controllers
 
         public IActionResult Register()
         {
+            TempData["SuccessMessage"] = null;
             return View();
         }
 
         public IActionResult Login()
         {
+            TempData["SuccessMessage"] = null;
             return View();
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult About()
         {
             return View();
         }

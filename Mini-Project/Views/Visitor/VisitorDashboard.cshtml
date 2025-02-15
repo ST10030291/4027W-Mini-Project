@@ -1,0 +1,277 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    .btnnn {
+        width: 6.5em;
+        height: 2.3em;
+        margin: 0.5em;
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 0.625em;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    btnnn :hover {
+        color: black;
+    }
+
+    btnnn :after {
+        content: "";
+        background: white;
+        position: absolute;
+        z-index: -1;
+        left: -20%;
+        right: -20%;
+        top: 0;
+        bottom: 0;
+        transform: skewX(-45deg) scale(0, 1);
+        transition: all 0.5s;
+    }
+
+    btnnn :hover:after {
+        transform: skewX(-45deg) scale(1, 1);
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+</style>
+
+<!-- Header-->
+<header class="bg-dark py-5" style="border-radius:20px">
+    <div class="container px-5" style="border-radius:20px">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h1 class="display-5 fw-bolder text-white mb-2">One City, Many Cultures</h1>
+                    <p class="lead text-white-50 mb-4">
+                        425 artists, volunteers, and suppliers, attracting an enthusiastic audience of over
+                        1100 attendees.
+                    </p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#popularEvents">View popular Events</a>
+                        <a class="btn btn-outline-light btn-lg px-4" href="#viewPackages">View all Packages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Events section -->
+<section class="py-5 border-bottom" id="popularEvents">
+    <h3>Popular Events Right Now</h3>
+    <div class="container px-5 my-5">
+        <div class="row gx-5" id="eventContainer">
+            <!-- Events will be inserted here dynamically -->
+        </div>
+    </div>
+    <a asp-controller="Visitor" asp-action="ViewEvents"><button class="btnnn">View Events</button></a>
+</section>
+
+
+<!-- Package Pricing section-->
+<section class="bg-light py-5 border-bottom" id="viewPackages">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Available Packages</h2>
+            <p class="lead mb-0">Add to your account when you RSVP for an event</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <!-- Basic -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="small text-uppercase fw-bold text-muted">Basic Package</div>
+                        <div class="mb-3">
+                            <span class="display-4 fw-bold">R250</span>
+                            <span class="text-muted"></span>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                <strong></strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                5x Soft Drinks (Coke, Sprite, etc.)
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                2x Complimentary Cocktails / Mocktails
+                            </li>     
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing card -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="small text-uppercase fw-bold">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            Drinks Package
+                        </div>
+                        <div class="mb-3">
+                            <span class="display-4 fw-bold">R1150</span>
+                            <span class="text-muted"></span>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                <strong></strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                x10 Soft Drinks (Coke, Sprite, etc.)
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                x5 Complimentary Cocktails / Mocktails
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                x5 Bottled Water
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                Discount on Alcoholic Beverages
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Pricing card -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <div class="small text-uppercase fw-bold text-muted"> Food Package</div>
+                        <div class="mb-3">
+                            <span class="display-4 fw-bold">R1999</span>
+                            <span class="text-muted"></span>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                x20 Soft Drinks (Coke, Sprite, etc.)
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                x5 Choice of One Main Meal (Burger, Pizza, Pasta, etc.)
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                x10 Bottled Water
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                Discount on Alcoholic Beverages
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                VIP Dining Area Access
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                1x Snack Pack (Popcorn, Chips, etc.)
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check text-primary"></i>
+                                Access to Exclusive Bar Area
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comment section-->
+<section class="py-5 border-bottom">
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Events Feedback</h2>
+            <p class="lead mb-0">Keeping you coming back..</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <!-- Comment 1-->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                            <div class="ms-4">
+                                <p class="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
+                                <div class="small text-muted">- Client Name, Location</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Comment 2-->
+                <div class="card">
+                    <div class="card-body p-4">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                            <div class="ms-4">
+                                <p class="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
+                                <div class="small text-muted">- Client Name, Location</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCSXynlYk7r4OS5dD7PmsUgYCzi2urRr5s",
+        authDomain: "w-mini-project.firebaseapp.com",
+        projectId: "w-mini-project",
+        storageBucket: "w-mini-project.firebasestorage.app",
+        messagingSenderId: "687935156042",
+        appId: "1:687935156042:web:b91329905440ce3f5b5bb3",
+        measurementId: "G-B657WCTBT3"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function fetchPopularEvents() {
+        const eventContainer = document.getElementById("eventContainer");
+        eventContainer.innerHTML = ""; // Clear existing content
+
+        const eventsQuery = query(collection(db, "events"), orderBy("RSVP_limit", "desc"), limit(3));
+        const eventsSnapshot = await getDocs(eventsQuery);
+
+        eventsSnapshot.forEach((doc) => {
+            const eventData = doc.data();
+            const eventItem = document.createElement("div");
+            eventItem.classList.add("col-lg-4", "mb-5", "mb-lg-0");
+            eventItem.innerHTML = `
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                    <i class="bi bi-calendar-event"></i>
+                </div>
+                <h2 class="h4 fw-bolder">${eventData.EventName}</h2>
+                <p>${eventData.Description || "No description available."}</p>
+            `;
+            eventContainer.appendChild(eventItem);
+        });
+    }
+
+    // Fetch popular events when the page loads
+    fetchPopularEvents();
+</script>

@@ -3,26 +3,52 @@
 *@
 @{
 }
+@model Mini_Project.Models.Login
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!-- Display Success or Error Messages -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
 <div class="container">
     <div class="form_area">
         <p class="title">Login</p>
-        <form action="">
+        <form asp-action="Login" method="post">
             <div class="form_group">
                 <label class="sub_title" for="email">Email</label>
-                <input placeholder="Enter your email" id="email" class="form_style" type="email">
+                <input placeholder="Enter your email" id="email" class="form_style" type="email" asp-for="Email" required />
             </div>
             <div class="form_group">
                 <label class="sub_title" for="password">Password</label>
-                <input placeholder="Enter your password" id="password" class="form_style" type="password">
+                <input placeholder="Enter your password" id="password" class="form_style" type="password" asp-for="Password" required />
             </div>
             <div>
                 <button class="btn">Login</button>
-                <p>Dont Have an Account? <a class="link" href="/Home/Register">Register Here!</a></p><a class="link" href="">
-                </a>
-            </div><a class="link" href="">
-
-            </a>
+                <p>Don't Have an Account? <a class="link" href="/Home/Register">Register Here!</a></p>
+            </div>
         </form>
-    </div><a class="link" href="">
-    </a>
+    </div>
 </div>

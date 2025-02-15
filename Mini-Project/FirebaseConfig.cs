@@ -11,22 +11,23 @@ public class FirebaseConfig
     {
         if (!_isInitialized)
         {
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "w-mini-project-firebase-adminsdk-fbsvc-0d50a2760b.json");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "w-mini-project-firebase-adminsdk-fbsvc-a9fe6ac77d.json");
 
             if (!File.Exists(path))
             {
                 throw new FileNotFoundException("Firebase service account key file not found.", path);
             }
 
-            // ✅ Explicitly set the environment variable for Firestore
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
+            Console.WriteLine($"GOOGLE_APPLICATION_CREDENTIALS: {Environment.GetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS")}");
+
 
             FirebaseApp.Create(new AppOptions()
             {
                 Credential = GoogleCredential.FromFile(path)
             });
 
-            Console.WriteLine("✅ Firebase Initialized Successfully.");
+            Console.WriteLine(" Firebase Initialized Successfully.");
             _isInitialized = true;
         }
     }

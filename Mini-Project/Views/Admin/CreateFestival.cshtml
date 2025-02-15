@@ -1,0 +1,68 @@
+﻿@model Mini_Project.Models.Festival
+
+@{
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+<!-- Display Success or Error Messages using JS -->
+@if (successMessage != null)
+{
+    <script>
+        alert('@successMessage');
+    </script>
+}
+
+@if (errorMessage != null)
+{
+    <script>
+        alert('@errorMessage');
+    </script>
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<div class="container">
+    <div class="form_area">
+        <p class="title">Create Festival</p>
+        <form asp-action="SaveFestivalDetails" method="post">
+            <div class="form_group">
+                <label asp-for="FestivalName">Festival Name</label>
+                <input asp-for="FestivalName" class="form-control" required />
+                <span asp-validation-for="FestivalName" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="Location">Location</label>
+                <input asp-for="Location" class="form-control" required />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="StartDate">Start Date</label>
+                <input asp-for="StartDate" type="datetime-local" class="form-control" required />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form_group">
+                <label asp-for="EndDate">End Date</label>
+                <input asp-for="EndDate" type="datetime-local" class="form-control" required />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+
+            <div>
+                <button type="submit" class="btn">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

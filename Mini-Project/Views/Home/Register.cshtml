@@ -1,12 +1,9 @@
 ﻿@model Mini_Project.Models.UserDetails
 
 @{
-    ViewData["Title"] = "User Registration";
 }
 
-<h1>User Registration</h1>
-
-<!-- ✅ Display Success or Error Messages -->
+<!-- Display Success or Error Messages -->
 @if (TempData["SuccessMessage"] != null)
 {
     <div class="alert alert-success">
@@ -30,7 +27,9 @@
         </ul>
     </div>
 }
-
+<div class="container">
+    <div class="form_area">
+        <p class="title">Register Now..</p>
 <form asp-action="SaveUserDetails" method="post">
     <div class="form_group">
         <label asp-for="Username">Username</label>
@@ -89,8 +88,11 @@
         <input asp-for="FestivalAttendanceAmt" type="number" class="form-control" min="0" required />
         <span asp-validation-for="FestivalAttendanceAmt" class="text-danger"></span>
     </div>
-
+    <div>
     <button type="submit" class="btn">Register</button>
+    </div>
     <p>Have an Account? <a class="linkk" href="/Home/Login">Login Here!</a></p><a class="link" href="">
     </a>
 </form>
+</div>
+</div>

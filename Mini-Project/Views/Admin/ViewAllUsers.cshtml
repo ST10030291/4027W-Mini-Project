@@ -1,0 +1,59 @@
+﻿@model List<Mini_Project.Models.UserDetails>
+
+@{
+    ViewData["Title"] = "View All Attendees";
+}
+
+<!-- Display Success or Error Messages -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+<h2 class="event-list-title">All Users attending the festival</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No users found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>UID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Province</th>
+                <th>Festival Attendance Amount</th>
+                <th>Date Created</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.UID</td>
+                    <td>@user.Username</td>
+                    <td>@user.Email</td>
+                    <td>@user.Age</td>
+                    <td>@user.Gender</td>
+                    <td>@user.Province</td>
+                    <td>@user.FestivalAttendanceAmt</td>
+                    <td>@user.DateCreated.ToString("MM/dd/yyyy")</td>
+                    <td>@user.Role</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -10,7 +10,7 @@ namespace Mini_Project.Models
         [EmailAddress(ErrorMessage = "Invalid email address.")]
         public string Email { get; set; }
 
-        // User's Password (for Firebase Authentication)
+        // User's Password 
         [Required(ErrorMessage = "Password is required.")]
         [StringLength(100, ErrorMessage = "Password must be at least {2} characters long.", MinimumLength = 6)]
         public string Password { get; set; }
@@ -41,7 +41,7 @@ namespace Mini_Project.Models
         // Date when the user details were created
         public DateTime DateCreated { get; set; }
 
-        // Firebase UID (will be populated after user registration)
+        // Firebase UID 
         public string UID { get; set; }
     }
 }

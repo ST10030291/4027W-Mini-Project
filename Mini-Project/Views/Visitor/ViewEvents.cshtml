@@ -1,0 +1,208 @@
+﻿@model List<Mini_Project.Models.Event>
+
+@{
+    var googleMapsApiKey = "AIzaSyAHBtfUvui9Re6Hzlxc6j7Fx-UnjPyy3IE";
+    var weatherApiKey = "ecf8a040e5d45d1eaed66a0dad268ef3";
+}
+<!-- Display Success or Error Messages -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<h2 class="page-title">All Events</h2>
+
+@if (Model != null && Model.Any())
+{
+    <div class="event-list">
+        @foreach (var eventItem in Model)
+        {
+            <div class="event-card">
+                <h3 class="event-title">@eventItem.EventName</h3>
+                <p class="event-description">@eventItem.Description</p>
+                <p class="event-location">Location: @eventItem.Location</p>
+                <p class="event-dates">Start Time: @eventItem.StartTime.ToString("g") | End Time: @eventItem.EndTime.ToString("g")</p>
+
+                <!-- Google Map -->
+                <div id="map-@eventItem.Id" class="event-map"></div>
+
+                <!-- Weather Info -->
+                <div id="weather-@eventItem.Id" class="event-weather">
+                    <p>Loading weather...</p>
+                </div>
+
+                <div class="form-container">
+                    <!-- RSVP Button -->
+                    <div class="rsvp-form">
+                        <a asp-controller="Visitor" asp-action="RSVP"> <button type="submit" class="btn">RSVP</button></a>
+                    </div>
+
+                    <!-- Rate Event Button -->
+                    <div class="rating-form">
+                        <a asp-controller="Visitor" asp-action="Rate"><button type="submit" class="btn">Rate Event</button></a>
+                    </div>
+
+                    <!-- Comment Button -->
+                    <div class="comment-form">
+                        <a asp-controller="Visitor" asp-action="Comment"><button type="submit" class="btn">Comment</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                // Google Map Initialization
+                function initMap(eventId, location) {
+                    var geocoder = new google.maps.Geocoder();
+
+                    geocoder.geocode({ 'address': location }, function(results, status) {
+                        if (status == 'OK') {
+                            var map = new google.maps.Map(document.getElementById('map-' + eventId), {
+                                zoom: 15,
+                                center: results[0].geometry.location
+                            });
+                            new google.maps.Marker({
+                                position: results[0].geometry.location,
+                                map: map
+                            });
+                        } else {
+                            document.getElementById('map-' + eventId).innerHTML = `<p>Location could not be found.</p>`;
+                        }
+                    });
+                }
+
+                // Call initMap for each event
+                initMap('@eventItem.Id', '@eventItem.Location');
+
+                // Weather API Integration
+                fetch(`https://api.openweathermap.org/data/2.5/weather?q=@eventItem.Location&appid=@weatherApiKey`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('weather-@eventItem.Id').innerHTML = `
+                            <p>Temperature: ${Math.round(data.main.temp - 273.15)}°C</p>
+                            <p>Weather: ${data.weather[0].description}</p>
+                        `;
+                    })
+                    .catch(error => {
+                        document.getElementById('weather-@eventItem.Id').innerHTML = `<p>Error loading weather for @eventItem.Location. Please try again later.</p>`;
+                    });
+            </script>
+        }
+    </div>
+}
+else
+{
+    <p>No events available.</p>
+}
+
+<script src="https://maps.googleapis.com/maps/api/js?key=@googleMapsApiKey&callback=initMap" async defer></script>
+
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+        color: #333;
+    }
+
+    .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 20px 0;
+    }
+
+    .event-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .event-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        padding: 20px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .event-title {
+        font-size: 1.8rem;
+        color: #007BFF;
+        margin-bottom: 10px;
+    }
+
+    .event-description {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    .event-location, .event-dates {
+        font-size: 0.9rem;
+        color: #777;
+        margin-bottom: 10px;
+    }
+
+    .event-map {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .event-weather {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .form-container {
+        margin-top: 20px;
+    }
+
+    .rsvp-form, .rating-form, .comment-form {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        display: inline-block;
+        width: 100%;
+    }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+</style>

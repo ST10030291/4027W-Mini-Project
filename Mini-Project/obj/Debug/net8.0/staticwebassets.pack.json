@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\Mini-Project.u9adgda1t6.bundle.scp.css"
     },
     {
+      "Id": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Image1.jpg"
+    },
+    {
+      "Id": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image2.jpg",
+      "PackagePath": "staticwebassets\\Images\\Image2.jpg"
+    },
+    {
+      "Id": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\Image3.jpg",
+      "PackagePath": "staticwebassets\\Images\\Image3.jpg"
+    },
+    {
+      "Id": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\delete_icon.png",
+      "PackagePath": "staticwebassets\\Images\\delete_icon.png"
+    },
+    {
+      "Id": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\Images\\logo.jpg",
+      "PackagePath": "staticwebassets\\Images\\logo.jpg"
+    },
+    {
       "Id": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
