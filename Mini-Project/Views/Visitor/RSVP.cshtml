@@ -1,5 +1,62 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<Mini_Project.Models.EventViewModel>
+
+<!-- Display Success or Error Messages -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
 }
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<div class="container">
+    <div class="form_area">
+        <p class="title">RSVP to an Event</p>
+        <form method="post" asp-action="SubmitRSVP" asp-controller="Visitor">
+            <div class="form_group">
+                <label class="sub_title" for="email">Enter your Email Address:</label>
+                <input placeholder="Enter your email" id="email" class="form_style" type="email" name="email" required />
+            </div>
+
+            <div class="form_group">
+                <label class="sub_title" for="eventId">Choose an Event:</label>
+                <select name="eventName" id="eventName" class="form_style">
+                    @foreach (var eventItem in Model)
+                    {
+                        <option value="@eventItem.Id">@eventItem.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form_group">
+                <label class="sub_title" for="packageChoice">Choose a Package:</label>
+                <select name="packageChoice" id="packageChoice" class="form_style">
+                    <option value="None">None</option>
+                    <option value="Basic">Basic</option>
+                    <option value="Drinks">Drinks</option>
+                    <option value="Food">Food</option>
+                </select>
+            </div>
+
+            <div>
+                <button class="btn">Confirm RSVP</button>
+            </div>
+        </form>
+    </div>
+</div>

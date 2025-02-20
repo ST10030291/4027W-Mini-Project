@@ -1,4 +1,6 @@
-﻿using Google.Cloud.Firestore;
+﻿using FirebaseAdmin.Auth;
+using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
 using Microsoft.AspNetCore.Mvc;
 using Mini_Project.Models;
 using System;
@@ -25,19 +27,200 @@ namespace Mini_Project.Controllers
             return View();
         }
 
-        public IActionResult Rate()
+        public async Task<IActionResult> Comment()
         {
-            return View();
+            try
+            {
+                var eventsQuery = _firestoreDb.Collection("events")
+                    .WhereEqualTo("EventVisibility", true);
+
+                var eventSnapshot = await eventsQuery.GetSnapshotAsync();
+                var eventsList = eventSnapshot.Documents.Select(doc => new EventViewModel
+                {
+                    Id = doc.Id,
+                    Name = doc.GetValue<string>("EventName")
+                }).ToList();
+
+                return View(eventsList);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"An error occurred while retrieving events: {ex.Message}";
+                return RedirectToAction("ViewAllEvents");
+            }
         }
 
-        public IActionResult RSVP()
+        public async Task<IActionResult> Rate()
         {
-            return View();
+            try
+            {
+                var eventsQuery = _firestoreDb.Collection("events")
+                    .WhereEqualTo("EventVisibility", true);
+
+                var eventSnapshot = await eventsQuery.GetSnapshotAsync();
+                var eventsList = eventSnapshot.Documents.Select(doc => new EventViewModel
+                {
+                    Id = doc.Id,
+                    Name = doc.GetValue<string>("EventName")
+                }).ToList();
+
+                return View(eventsList);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"An error occurred while retrieving events: {ex.Message}";
+                return RedirectToAction("ViewAllEvents");
+            }
         }
 
-        public IActionResult Comment()
+        // Save Ratings
+        [HttpPost]
+        public async Task<IActionResult> SubmitRating(string email, string eventId, int eventRating, int recommendRating)
         {
-            return View();
+            if (string.IsNullOrEmpty(eventId))
+            {
+                TempData["Error"] = "Event selection is required.";
+                return RedirectToAction("Rate");
+            }
+
+            // Get the currently logged-in user's email
+            var userEmail = email;
+            if (string.IsNullOrEmpty(userEmail))
+            {
+                TempData["Error"] = "User not authenticated.";
+                return RedirectToAction("Rate");
+            }
+
+            // Get UserId from Firestore based on Email
+            Query userQuery = _firestoreDb.Collection("Users").WhereEqualTo("Email", userEmail);
+            QuerySnapshot userSnapshot = await userQuery.GetSnapshotAsync();
+            if (!userSnapshot.Any())
+            {
+                TempData["Error"] = "User not found.";
+                return RedirectToAction("Rate");
+            }
+
+            var userId = userSnapshot.Documents.First().Id;
+
+            // Create rating object
+            var ratingData = new
+            {
+                Id = Guid.NewGuid().ToString(),
+                EventId = eventId,
+                UserId = userId,
+                EventRating = eventRating,
+                RecommendationRating = recommendRating,
+                Timestamp = Timestamp.GetCurrentTimestamp()
+            };
+
+            // Save to Firestore
+            DocumentReference ratingRef = _firestoreDb.Collection("Ratings").Document();
+            await ratingRef.SetAsync(ratingData);
+
+            TempData["Success"] = "Thank you for your rating!";
+            return RedirectToAction("Rate");
+        }
+
+        // Save a comment
+        [HttpPost]
+        public async Task<IActionResult> SubmitComment(string email, string eventName, string content)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(eventName) || string.IsNullOrEmpty(content))
+            {
+                TempData["ErrorMessage"] = "All fields are required.";
+                return RedirectToAction("Comment");
+            }
+
+            // Fetch user ID from Firebase based on email
+            var userQuery = _firestoreDb.Collection("Users").WhereEqualTo("Email", email).Limit(1);
+            var userSnapshot = await userQuery.GetSnapshotAsync();
+            var user = userSnapshot.Documents.FirstOrDefault();
+
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "User not found.";
+                return RedirectToAction("Comment");
+            }
+
+            string userId = user.Id;
+
+            // Create the comment object
+            var comment = new Comment
+            {
+                EventId = eventName, 
+                UserId = userId, 
+                Content = content 
+            };
+
+            // Save the comment to Firestore
+            var commentRef = _firestoreDb.Collection("comments").Document(comment.Id);
+            await commentRef.SetAsync(comment);
+
+            TempData["SuccessMessage"] = "Comment submitted successfully!";
+            return RedirectToAction("Comment");
+        }
+
+
+        // Create an RSVP
+        [HttpPost]
+        public async Task<IActionResult> SubmitRSVP(string email, string eventName, string packageChoice)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(eventName) || string.IsNullOrEmpty(packageChoice))
+            {
+                TempData["ErrorMessage"] = "All fields are required.";
+                return RedirectToAction("RSVP");
+            }
+
+            // Search for the user by email
+            var usersSnapshot = await _firestoreDb.Collection("Users")
+                .WhereEqualTo("Email", email)
+                .GetSnapshotAsync();
+
+            var userDoc = usersSnapshot.Documents.FirstOrDefault();
+            if (userDoc == null)
+            {
+                TempData["ErrorMessage"] = "User not found.";
+                return RedirectToAction("RSVP");
+            }
+
+            string userId = userDoc.Id;
+
+            var rsvp = new RSVP
+            {
+                EventName = eventName,
+                UserId = userId,
+                PackageChoice = packageChoice
+            };
+
+            // Save the RSVP in Firestore
+            var rsvpRef = _firestoreDb.Collection("RSVPs").Document(rsvp.Id);
+            await rsvpRef.SetAsync(rsvp);
+
+            TempData["SuccessMessage"] = "RSVP confirmed successfully!";
+            return RedirectToAction("VisitorDashboard", "Visitor");
+        }
+
+        public async Task<IActionResult> RSVP()
+        {
+            try
+            {
+                var eventsQuery = _firestoreDb.Collection("events")
+                    .WhereEqualTo("EventVisibility", true);
+
+                var eventSnapshot = await eventsQuery.GetSnapshotAsync();
+                var eventsList = eventSnapshot.Documents.Select(doc => new EventViewModel
+                {
+                    Id = doc.Id,
+                    Name = doc.GetValue<string>("EventName")
+                }).ToList();
+
+                return View(eventsList);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"An error occurred while retrieving events: {ex.Message}";
+                return RedirectToAction("ViewAllEvents");
+            }
         }
 
         // Method to retrieve all visible events
@@ -78,88 +261,6 @@ namespace Mini_Project.Controllers
             }
 
             return View(events);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> RSVP(string eventId, string packageChoice)
-        {
-            var userId = User.Identity.Name; // Assuming the user is logged in and has a unique ID
-
-            // Check if the user has already RSVP'd
-            var existingRSVP = await _firestoreDb.Collection("RSVP")
-                .WhereEqualTo("EventId", eventId)
-                .WhereEqualTo("UserId", userId)
-                .GetSnapshotAsync();
-
-            if (existingRSVP.Documents.Any())
-            {
-                TempData["ErrorMessage"] = "You have already RSVP'd for this event!";
-                return RedirectToAction("ViewAllEvents");
-            }
-
-            var rsvp = new RSVP
-            {
-                EventId = eventId,
-                UserId = userId,
-                PackageChoice = packageChoice
-            };
-
-            var rsvpRef = _firestoreDb.Collection("RSVP").Document();
-            await rsvpRef.SetAsync(rsvp);
-
-            TempData["SuccessMessage"] = "RSVP submitted successfully!";
-            return RedirectToAction("ViewAllEvents");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> RateEvent(string eventId, int ratingValue, int wouldRecommend)
-        {
-            var userId = User.Identity.Name;
-
-            if (ratingValue < 1 || ratingValue > 5)
-            {
-                TempData["ErrorMessage"] = "Please provide a valid rating between 1 and 5.";
-                return RedirectToAction("ViewAllEvents");
-            }
-
-            var rating = new Rating
-            {
-                EventId = eventId,
-                UserId = userId,
-                RatingValue = ratingValue,
-                WouldRecommend = wouldRecommend
-            };
-
-            var ratingRef = _firestoreDb.Collection("Ratings").Document();
-            await ratingRef.SetAsync(rating);
-
-            TempData["SuccessMessage"] = "Rating submitted successfully!";
-            return RedirectToAction("ViewAllEvents");
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> AddComment(string eventId, string content)
-        {
-            var userId = User.Identity.Name;
-
-            if (string.IsNullOrWhiteSpace(content))
-            {
-                TempData["ErrorMessage"] = "Comment cannot be empty.";
-                return RedirectToAction("ViewAllEvents");
-            }
-
-            var comment = new EventComment
-            {
-                EventId = eventId,
-                VisitorId = userId,
-                CommentText = content
-            };
-
-            var commentRef = _firestoreDb.Collection("Comments").Document();
-            await commentRef.SetAsync(comment);
-
-            TempData["SuccessMessage"] = "Comment submitted successfully!";
-            return RedirectToAction("ViewAllEvents");
         }
     }
 }

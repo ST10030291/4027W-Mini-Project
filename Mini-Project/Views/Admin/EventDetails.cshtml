@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Mini_Project.Models.EventDetailsViewModel
+
+<h2>@Model.Event.EventName</h2>
+<p>@Model.Event.Description</p>
+<p><strong>Location:</strong> @Model.Event.Location</p>
+<p><strong>Category:</strong> @Model.Event.Category</p>
+<p><strong>Start Time:</strong> @Model.Event.StartTime</p>
+<p><strong>End Time:</strong> @Model.Event.EndTime</p>
+
+<h3>Average Rating: @Model.AverageRating / 5</h3>
+<h3>Recommendation Score: @Model.RecommendRating / 5</h3>
+
+<h3>RSVPs (@Model.RSVPs.Count)</h3>
+<ul>
+    @foreach (var rsvp in Model.RSVPs)
+    {
+        <li>@rsvp.UserId - Package: @rsvp.PackageChoice</li>
+    }
+</ul>
+
+<h3>Comments (@Model.Comments.Count)</h3>
+<ul>
+    @foreach (var comment in Model.Comments)
+    {
+        <li>@comment.Content (User: @comment.UserId)</li>
+    }
+</ul>
+
+<h3>Ratings (@Model.Ratings.Count)</h3>
+<ul>
+    @foreach (var rating in Model.Ratings)
+    {
+        <li>Rating: @rating.RatingValue / 5, Would Recommend: @rating.WouldRecommend / 5</li>
+    }
+</ul>

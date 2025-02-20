@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SfuEgo1LzAie+4NrS+o/1MQG46MkeiJWOd4xsZbddyM=",
+  "Hash": "pxanyrEF3scEx0kwipxzdH1wZcQ6bPzqDFpLekmZpaM=",
   "Source": "Mini-Project",
   "BasePath": "_content/Mini-Project",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "1gazet5vh6",
-      "Integrity": "X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k=",
+      "Fingerprint": "hh6jhin8d1",
+      "Integrity": "a69RelD9ZynPlmA6IMgXNw8RbeVZsrHyt/OJ2Bc1PBM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1426,51 +1426,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.1gazet5vh6.css",
-      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7721"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 12 Feb 2025 17:45:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "1gazet5vh6"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1481,7 +1436,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7721"
+          "Value": "9455"
         },
         {
           "Name": "Content-Type",
@@ -1489,11 +1444,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k=\""
+          "Value": "\"a69RelD9ZynPlmA6IMgXNw8RbeVZsrHyt/OJ2Bc1PBM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 12 Feb 2025 17:45:16 GMT"
+          "Value": "Sat, 15 Feb 2025 11:59:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1503,7 +1458,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-X249xxlaHJueGJlbisD5cVF/08ru+2EmbSmVJEzvu1k="
+          "Value": "sha256-a69RelD9ZynPlmA6IMgXNw8RbeVZsrHyt/OJ2Bc1PBM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.hh6jhin8d1.css",
+      "AssetFile": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9455"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"a69RelD9ZynPlmA6IMgXNw8RbeVZsrHyt/OJ2Bc1PBM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Feb 2025 11:59:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hh6jhin8d1"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-a69RelD9ZynPlmA6IMgXNw8RbeVZsrHyt/OJ2Bc1PBM="
         }
       ]
     },

@@ -1,4 +1,5 @@
 ﻿using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
@@ -15,9 +16,19 @@ namespace Mini_Project.Controllers
             FirebaseConfig.InitializeFirebase();
             _firestoreDb = FirestoreDb.Create("w-mini-project");
             _logger = logger;
+
         }
 
-        // Method to Delete an Event
+
+        // Display all Comments for an Event
+        // Display all Ratings for an Event
+        // Display all RSVPs for an Event
+
+
+        // 2 event-related data points
+
+        // Methods to display 4 Data points about visitors
+
 
         // Method to display list of all users
         public async Task<IActionResult> ViewAllUsers()
@@ -216,9 +227,62 @@ namespace Mini_Project.Controllers
         }
 
 
-        public IActionResult AdminDashboard()
+        public async Task<IActionResult> AdminDashboard()
         {
-            return View();
+            try
+            {
+                var eventsCollection = _firestoreDb.Collection("events");
+                var snapshot = await eventsCollection.GetSnapshotAsync();
+
+                var eventsList = snapshot.Documents.Select(doc =>
+                {
+                    doc.TryGetValue("EventName", out string eventName);
+                    doc.TryGetValue("Location", out string location);
+                    doc.TryGetValue("StartTime", out Timestamp startTime);
+                    doc.TryGetValue("EndTime", out Timestamp endTime);
+                    doc.TryGetValue("RSVP_limit", out int attendeeLimit);
+
+                    return new AdminEventsViewModel
+                    {
+                        Id = doc.Id,
+                        Name = eventName ?? "N/A",
+                        Location = location ?? "N/A",
+                        StartTime = startTime.ToDateTime(),
+                        EndTime = endTime.ToDateTime(),
+                        AttendeeLimit = attendeeLimit
+                    };
+                }).ToList();
+
+                return View(eventsList); // Pass data to the view
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Error loading events: {ex.Message}";
+                return RedirectToAction("AdminDashboard");
+            }
+        }
+
+        public async Task<IActionResult> EventRsvps()
+        {
+            try
+            {
+                var eventsQuery = _firestoreDb.Collection("events")
+                    .WhereEqualTo("EventVisibility", true);
+
+                var eventSnapshot = await eventsQuery.GetSnapshotAsync();
+                var eventsList = eventSnapshot.Documents.Select(doc => new EventViewModel
+                {
+                    Id = doc.Id,
+                    Name = doc.GetValue<string>("EventName")
+                }).ToList();
+
+                return View(eventsList);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"An error occurred while retrieving events: {ex.Message}";
+                return RedirectToAction("AdminDashboard");
+            }
         }
 
         public IActionResult CreateEvent()
@@ -231,15 +295,64 @@ namespace Mini_Project.Controllers
             return View();
         }
 
-        public IActionResult DeleteEvent()
+        public async Task<IActionResult> DeleteEvent()
         {
-            return View();
+            try
+            {
+                var eventsQuery = _firestoreDb.Collection("events")
+                    .WhereEqualTo("EventVisibility", true);
+
+                var eventSnapshot = await eventsQuery.GetSnapshotAsync();
+                var eventsList = eventSnapshot.Documents.Select(doc => new EventViewModel
+                {
+                    Id = doc.Id,
+                    Name = doc.GetValue<string>("EventName")
+                }).ToList();
+
+                return View(eventsList);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"An error occurred while retrieving events: {ex.Message}";
+                return RedirectToAction("AdminDashboard");
+            }
         }
+
+        // Method to delete an event
+        [HttpPost]
+        public async Task<IActionResult> deleteEvent(string eventName)
+        {
+            try
+            {
+                var eventsCollection = _firestoreDb.Collection("events");
+                var query = eventsCollection.WhereEqualTo("EventName", eventName);
+                var querySnapshot = await query.GetSnapshotAsync();
+
+                if (!querySnapshot.Documents.Any())
+                {
+                    TempData["ErrorMessage"] = "Event not found.";
+                    return RedirectToAction("DeleteEvent");
+                }
+
+                foreach (var document in querySnapshot.Documents)
+                {
+                    await document.Reference.DeleteAsync();
+                }
+
+                TempData["SuccessMessage"] = "Event deleted successfully!";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"An error occurred while deleting the event: {ex.Message}";
+            }
+
+            return RedirectToAction("DeleteEvent");
+        }
+
 
         public IActionResult CreateFestival()
         {
             return View();
         }
-
     }
 }

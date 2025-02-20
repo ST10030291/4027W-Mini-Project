@@ -53,7 +53,7 @@
                 <div class="form-container">
                     <!-- RSVP Button -->
                     <div class="rsvp-form">
-                        <a asp-controller="Visitor" asp-action="RSVP"> <button type="submit" class="btn">RSVP</button></a>
+                        <a asp-controller="Visitor" asp-action="RSVP" asp-route-eventId="@eventItem.Id"> <button type="submit" class="btn">RSVP</button></a>
                     </div>
 
                     <!-- Rate Event Button -->

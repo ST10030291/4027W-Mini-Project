@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Mini_Project.Models.AdminEventsViewModel>
 @{
 }
 
@@ -126,6 +126,7 @@
                 <h2 class="manage-events-title">Manage Events</h2>
                 <a asp-controller="Admin" asp-action="CreateEvent"><button class="btn btn-create">Create Event</button></a>
                 <a asp-controller="Admin" asp-action="EditEvent"><button class="btn btn-edit">Edit Event</button></a>
+                <a asp-controller="Admin" asp-action="EventDetails"><button class="btn btn-edit">View Attendees</button></a>
                 <a asp-controller="Admin" asp-action="DeleteEvent"><button class="btn btn-delete">Delete Event</button></a>
             </div>
 
@@ -148,31 +149,21 @@
                         <th>Start Time</th>
                         <th>End Time</th>
                         <th>Attendee Limit</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Cape Town Music Festival</td>
-                        <td>Green Point Stadium</td>
-                        <td>15 March 2025, 18:00</td>
-                        <td>16 March 2025, 02:00</td>
-                        <td>5000</td>
-                        <td><button class="view-attendees-btn">View RSVP Attendees</button></td>
-                    </tr>
-                    <tr>
-                        <td>Food & Wine Expo</td>
-                        <td>Cape Town International Convention Centre</td>
-                        <td>10 April 2025, 12:00</td>
-                        <td>10 April 2025, 22:00</td>
-                        <td>2000</td>
-                        <td><button class="view-attendees-btn">View RSVP Attendees</button></td>
-                    </tr>
+                    @foreach (var eventItem in Model)
+                    {
+                        <tr>
+                            <td>@eventItem.Name</td>
+                            <td>@eventItem.Location</td>
+                            <td>@eventItem.StartTime.ToString("dd MMMM yyyy, HH:mm")</td>
+                            <td>@eventItem.EndTime.ToString("dd MMMM yyyy, HH:mm")</td>
+                            <td>@eventItem.AttendeeLimit</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
-
-    <!-- Data points -->
-
 </div>
