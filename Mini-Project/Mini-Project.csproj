@@ -8,9 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Images\Image1.jpg" />
-    <None Include="wwwroot\Images\Image2.jpg" />
-    <None Include="wwwroot\Images\Image3.jpg" />
     <None Include="wwwroot\Images\logo.jpg" />
   </ItemGroup>
 

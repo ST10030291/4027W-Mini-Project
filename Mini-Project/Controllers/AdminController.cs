@@ -23,11 +23,73 @@ namespace Mini_Project.Controllers
         // Display all Comments for an Event
         // Display all Ratings for an Event
         // Display all RSVPs for an Event
+        public async Task<IActionResult> EventDetails()
+        {
+            try
+            {
+                var eventsCollection = _firestoreDb.Collection("events");
+                var snapshot = await eventsCollection.GetSnapshotAsync();
 
+                var eventsList = new List<AdminEventsViewModel>();
 
-        // 2 event-related data points
+                foreach (var doc in snapshot.Documents)
+                {
+                    doc.TryGetValue("EventName", out string eventName);
+                    doc.TryGetValue("Location", out string location);
+                    doc.TryGetValue("StartTime", out Timestamp startTime);
+                    doc.TryGetValue("EndTime", out Timestamp endTime);
+                    doc.TryGetValue("RSVP_limit", out int attendeeLimit);
 
-        // Methods to display 4 Data points about visitors
+                    // Fetch related RSVP records
+                    var rsvpCollection = _firestoreDb.Collection("RSVPs").WhereEqualTo("EventName", doc.Id);
+                    var rsvpSnapshot = await rsvpCollection.GetSnapshotAsync();
+                    var rsvpList = rsvpSnapshot.Documents.Select(rsvpDoc => new RSVPViewModel
+                    {
+                        UserId = rsvpDoc.GetValue<string>("UserId")
+                    }).ToList();
+                    int totalRsvps = rsvpList.Count;
+
+                    // Fetch related Comments
+                    var commentsCollection = _firestoreDb.Collection("comments").WhereEqualTo("EventId", doc.Id);
+                    var commentsSnapshot = await commentsCollection.GetSnapshotAsync();
+                    var commentsList = commentsSnapshot.Documents.Select(commentDoc => new CommentViewModel
+                    {
+                        Content = commentDoc.GetValue<string>("Content")
+                    }).ToList();
+
+                    // Fetch related Ratings
+                    var ratingsCollection = _firestoreDb.Collection("Ratings").WhereEqualTo("EventId", doc.Id);
+                    var ratingsSnapshot = await ratingsCollection.GetSnapshotAsync();
+                    var ratingsList = ratingsSnapshot.Documents.Select(ratingDoc => new RatingViewModel
+                    {
+                        EventRating = ratingDoc.GetValue<int>("EventRating"),
+                        RecommendationRating = ratingDoc.GetValue<int>("RecommendationRating")
+                    }).ToList();
+
+                    eventsList.Add(new AdminEventsViewModel
+                    {
+                        Id = doc.Id,
+                        Name = eventName ?? "N/A",
+                        Location = location ?? "N/A",
+                        StartTime = startTime.ToDateTime(),
+                        EndTime = endTime.ToDateTime(),
+                        AttendeeLimit = attendeeLimit,
+                        TotalRSVPs = totalRsvps,
+                        RSVPs = rsvpList,
+                        Comments = commentsList,
+                        Ratings = ratingsList
+                    });
+                }
+
+                return View(eventsList);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Error loading events: {ex.Message}";
+                return View(new List<AdminEventsViewModel>());
+            }
+        }
+
 
 
         // Method to display list of all users

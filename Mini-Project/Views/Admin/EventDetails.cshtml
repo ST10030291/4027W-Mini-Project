@@ -1,40 +1,57 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<Mini_Project.Models.AdminEventsViewModel>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
 }
-@model Mini_Project.Models.EventDetailsViewModel
 
-<h2>@Model.Event.EventName</h2>
-<p>@Model.Event.Description</p>
-<p><strong>Location:</strong> @Model.Event.Location</p>
-<p><strong>Category:</strong> @Model.Event.Category</p>
-<p><strong>Start Time:</strong> @Model.Event.StartTime</p>
-<p><strong>End Time:</strong> @Model.Event.EndTime</p>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Event Details</h2>
 
-<h3>Average Rating: @Model.AverageRating / 5</h3>
-<h3>Recommendation Score: @Model.RecommendRating / 5</h3>
+    <div class="row">
+        @foreach (var eventItem in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary">@eventItem.Name</h4>
+                        <p><strong>Location:</strong> @eventItem.Location</p>
+                        <p><strong>Start Time:</strong> @eventItem.StartTime.ToString("f")</p>
+                        <p><strong>End Time:</strong> @eventItem.EndTime.ToString("f")</p>
+                        <p><strong>Attendee Limit:</strong> @eventItem.AttendeeLimit</p>
 
-<h3>RSVPs (@Model.RSVPs.Count)</h3>
-<ul>
-    @foreach (var rsvp in Model.RSVPs)
-    {
-        <li>@rsvp.UserId - Package: @rsvp.PackageChoice</li>
-    }
-</ul>
+                        <hr>
 
-<h3>Comments (@Model.Comments.Count)</h3>
-<ul>
-    @foreach (var comment in Model.Comments)
-    {
-        <li>@comment.Content (User: @comment.UserId)</li>
-    }
-</ul>
+                        <!-- RSVP Section -->
+                        <h5 class="text-success">RSVPs (@eventItem.TotalRSVPs)</h5>
+                        <ul class="list-group mb-3">
+                            @foreach (var rsvp in eventItem.RSVPs)
+                            {
+                                <li class="list-group-item">User ID: @rsvp.UserId</li>
+                            }
+                        </ul>
 
-<h3>Ratings (@Model.Ratings.Count)</h3>
-<ul>
-    @foreach (var rating in Model.Ratings)
-    {
-        <li>Rating: @rating.RatingValue / 5, Would Recommend: @rating.WouldRecommend / 5</li>
-    }
-</ul>
+                        <!-- Comments Section -->
+                        <h5 class="text-info">Comments</h5>
+                        <ul class="list-group mb-3">
+                            @foreach (var comment in eventItem.Comments)
+                            {
+                                <li class="list-group-item">@comment.Content</li>
+                            }
+                        </ul>
+
+                        <!-- Ratings Section -->
+                        <h5 class="text-warning">Ratings</h5>
+                        @foreach (var rating in eventItem.Ratings)
+                        {
+                            <p>
+                                <strong>Event Rating:</strong> @rating.EventRating/5 |
+                                <strong>Recommendation:</strong> @rating.RecommendationRating/5
+                            </p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

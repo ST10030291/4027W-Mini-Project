@@ -11,7 +11,7 @@ public class FirebaseConfig
     {
         if (!_isInitialized)
         {
-            string path = Path.Combine(Directory.GetCurrentDirectory(), "w-mini-project-firebase-adminsdk-fbsvc-74738d21c1.json");
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "w-mini-project-firebase-adminsdk-fbsvc-5633e3cb70.json");
 
             if (!File.Exists(path))
             {

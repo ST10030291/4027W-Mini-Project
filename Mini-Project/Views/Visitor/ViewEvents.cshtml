@@ -2,8 +2,10 @@
 
 @{
     var googleMapsApiKey = "AIzaSyAHBtfUvui9Re6Hzlxc6j7Fx-UnjPyy3IE";
-    var weatherApiKey = "ecf8a040e5d45d1eaed66a0dad268ef3";
+    var weatherApiKey = "80a1998ebcc9b06405bfad0d711413c6";
 }
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/@googleMapsApiKey/extended-component-library/0.6.11/index.min.js">
+</script>
 <!-- Display Success or Error Messages -->
 @if (TempData["SuccessMessage"] != null)
 {
@@ -36,84 +38,119 @@
     <div class="event-list">
         @foreach (var eventItem in Model)
         {
+            var formattedStartDate = eventItem.StartTime.ToString("yyyy-MM-dd"); 
+            var encodedLocation = Uri.EscapeDataString(eventItem.Location); 
+
             <div class="event-card">
-                <h3 class="event-title">@eventItem.EventName</h3>
+                <h3 class="event-title">🎟️ @eventItem.EventName</h3>
                 <p class="event-description">@eventItem.Description</p>
-                <p class="event-location">Location: @eventItem.Location</p>
-                <p class="event-dates">Start Time: @eventItem.StartTime.ToString("g") | End Time: @eventItem.EndTime.ToString("g")</p>
+                <p class="event-location">📍 Location: @eventItem.Location</p>
+                <p class="event-dates">📅 Start: @eventItem.StartTime.ToString("g")</p>
+                <p class="event-dates">📅 End: @eventItem.EndTime.ToString("g")</p>
 
                 <!-- Google Map -->
-                <div id="map-@eventItem.Id" class="event-map"></div>
-
-                <!-- Weather Info -->
-                <div id="weather-@eventItem.Id" class="event-weather">
-                    <p>Loading weather...</p>
-                </div>
+                <iframe class="event-map"
+                        width="100%" height="250" style="border:0"
+                        loading="lazy"
+                        allowfullscreen
+                        src="https://www.google.com/maps/embed/v1/place?q=@encodedLocation&key=@googleMapsApiKey">
+                </iframe>
 
                 <div class="form-container">
                     <!-- RSVP Button -->
                     <div class="rsvp-form">
-                        <a asp-controller="Visitor" asp-action="RSVP" asp-route-eventId="@eventItem.Id"> <button type="submit" class="btn">RSVP</button></a>
+                        <a asp-controller="Visitor" asp-action="RSVP" asp-route-eventId="@eventItem.Id">
+                            <button type="submit" class="btn">RSVP</button>
+                        </a>
                     </div>
 
                     <!-- Rate Event Button -->
                     <div class="rating-form">
-                        <a asp-controller="Visitor" asp-action="Rate"><button type="submit" class="btn">Rate Event</button></a>
+                        <a asp-controller="Visitor" asp-action="Rate">
+                            <button type="submit" class="btn">Rate Event</button>
+                        </a>
                     </div>
 
                     <!-- Comment Button -->
                     <div class="comment-form">
-                        <a asp-controller="Visitor" asp-action="Comment"><button type="submit" class="btn">Comment</button></a>
+                        <a asp-controller="Visitor" asp-action="Comment">
+                            <button type="submit" class="btn">Comment</button>
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <script>
-                // Google Map Initialization
-                function initMap(eventId, location) {
-                    var geocoder = new google.maps.Geocoder();
-
-                    geocoder.geocode({ 'address': location }, function(results, status) {
-                        if (status == 'OK') {
-                            var map = new google.maps.Map(document.getElementById('map-' + eventId), {
-                                zoom: 15,
-                                center: results[0].geometry.location
-                            });
-                            new google.maps.Marker({
-                                position: results[0].geometry.location,
-                                map: map
-                            });
-                        } else {
-                            document.getElementById('map-' + eventId).innerHTML = `<p>Location could not be found.</p>`;
-                        }
-                    });
-                }
-
-                // Call initMap for each event
-                initMap('@eventItem.Id', '@eventItem.Location');
-
-                // Weather API Integration
-                fetch(`https://api.openweathermap.org/data/2.5/weather?q=@eventItem.Location&appid=@weatherApiKey`)
-                    .then(response => response.json())
-                    .then(data => {
-                        document.getElementById('weather-@eventItem.Id').innerHTML = `
-                            <p>Temperature: ${Math.round(data.main.temp - 273.15)}°C</p>
-                            <p>Weather: ${data.weather[0].description}</p>
-                        `;
-                    })
-                    .catch(error => {
-                        document.getElementById('weather-@eventItem.Id').innerHTML = `<p>Error loading weather for @eventItem.Location. Please try again later.</p>`;
-                    });
-            </script>
         }
     </div>
 }
 else
 {
-    <p>No events available.</p>
+    <p>No events available :(</p>
 }
 
-<script src="https://maps.googleapis.com/maps/api/js?key=@googleMapsApiKey&callback=initMap" async defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("https://api.openweathermap.org/data/2.5/weather?q=Cape%20Town,za&units=metric&appid=ecf8a040e5d45d1eaed66a0dad268ef3")
+            .then(response => response.json())
+            .then(data => {
+                if (!data || !data.main) {
+                    document.getElementById("weather-info").innerHTML = "<p>⚠️ Weather data not found.</p>";
+                    return;
+                }
+                document.getElementById("weather-info").innerHTML = `
+                    <p>Temperature: 🌡️ ${data.main.temp}°C</p>
+                    <p>Humidity: 💧 ${data.main.humidity}%</p>
+                    <p>Condition: ${data.weather[0].main} (${data.weather[0].description})</p>
+                    <p>Wind Speed: 🌬️ ${data.wind.speed} m/s</p>
+                `;
+            })
+            .catch(error => {
+                document.getElementById("weather-info").innerHTML = "<p>⚠️ Unable to load weather data.</p>";
+                console.error("Weather API error:", error);
+            });
+    });
+
+        async function init() {
+      await customElements.whenDefined('gmp-map');
+
+      const map = document.querySelector('gmp-map');
+      const marker = document.querySelector('gmp-advanced-marker');
+      const placePicker = document.querySelector('gmpx-place-picker');
+      const infowindow = new google.maps.InfoWindow();
+
+      map.innerMap.setOptions({
+        mapTypeControl: false
+      });
+
+      placePicker.addEventListener('gmpx-placechange', () => {
+        const place = placePicker.value;
+
+        if (!place.location) {
+          window.alert(
+            "No details available for input: '" + place.name + "'"
+          );
+          infowindow.close();
+          marker.position = null;
+          return;
+        }
+
+        if (place.viewport) {
+          map.innerMap.fitBounds(place.viewport);
+        } else {
+          map.center = place.location;
+          map.zoom = 17;
+        }
+
+        marker.position = place.location;
+        infowindow.setContent(
+          `<strong>${place.displayName}</strong><br>
+           <span>${place.formattedAddress}</span>
+        `);
+        infowindow.open(map.innerMap, marker);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+</script>
 
 <style>
     /* General Styles */
@@ -132,6 +169,8 @@ else
     }
 
     .event-list {
+        border-radius:25px;
+        background-color:lightgray;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
@@ -205,4 +244,60 @@ else
         .btn:hover {
             background-color: #0056b3;
         }
+
+    /* Container for Map & Weather */
+    .venue-weather-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    /* Google Maps Container */
+    .map-container {
+        flex: 1;
+        min-width: 300px;
+        max-width: 600px;
+        height: 400px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* Weather Card */
+    .weather-card {
+        flex: 1;
+        min-width: 280px;
+        max-width: 400px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+
+        .weather-card h3 {
+            font-size: 1.5rem;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .weather-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .place-picker-container {
+        padding: 20px;
+    }
 </style>
