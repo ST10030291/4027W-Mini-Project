@@ -75,11 +75,11 @@ namespace Mini_Project.Controllers
                 TempData["SuccessMessage"] = "User registered successfully!";
                 if (model.Role.ToLower() == "admin")
                 {
-                    return RedirectToAction("AdminDashboard");
+                    return RedirectToAction("AdminDashboard", "Admin");
                 }
                 else
                 {
-                    return RedirectToAction("VisitorDashboard");
+                    return RedirectToAction("VisitorDashboard", "Visitor");
                 }
             }
             catch (Exception ex)

@@ -90,9 +90,7 @@ namespace Mini_Project.Controllers
             }
         }
 
-
-
-        // Method to display list of all users
+        // Method to display list of all users (only Visitors)
         public async Task<IActionResult> ViewAllUsers()
         {
             var usersCollection = _firestoreDb.Collection("Users");
@@ -102,25 +100,31 @@ namespace Mini_Project.Controllers
             foreach (var document in snapshot.Documents)
             {
                 var user = document.ToDictionary();
-                users.Add(new UserDetails
+                var role = user.ContainsKey("Role") ? user["Role"].ToString() : "Visitor";
+
+                // Only add users with the "Visitor" role
+                if (role.Equals("Visitor", StringComparison.OrdinalIgnoreCase))
                 {
-                    UID = document.Id,
-                    Username = user.ContainsKey("Username") ? user["Username"].ToString() : "N/A",
-                    Email = user.ContainsKey("Email") ? user["Email"].ToString() : "N/A",
-                    Age = user.ContainsKey("Age") ? Convert.ToInt32(user["Age"]) : 0,
-                    Gender = user.ContainsKey("Gender") ? user["Gender"].ToString() : "N/A",
-                    Province = user.ContainsKey("Province") ? user["Province"].ToString() : "N/A",
-                    FestivalAttendanceAmt = user.ContainsKey("FestivalAttendanceAmt") ? Convert.ToInt32(user["FestivalAttendanceAmt"]) : 0,
-                    DateCreated = user.ContainsKey("DateCreated") && user["DateCreated"] is Timestamp timestamp
-                                  ? timestamp.ToDateTime()
-                                  : DateTime.MinValue,
-                    Role = user.ContainsKey("Role") ? user["Role"].ToString() : "Visitor"
-                });
+                    users.Add(new UserDetails
+                    {
+                        UID = document.Id,
+                        Username = user.ContainsKey("Username") ? user["Username"].ToString() : "N/A",
+                        Email = user.ContainsKey("Email") ? user["Email"].ToString() : "N/A",
+                        Age = user.ContainsKey("Age") ? Convert.ToInt32(user["Age"]) : 0,
+                        Gender = user.ContainsKey("Gender") ? user["Gender"].ToString() : "N/A",
+                        Province = user.ContainsKey("Province") ? user["Province"].ToString() : "N/A",
+                        FestivalAttendanceAmt = user.ContainsKey("FestivalAttendanceAmt") ? Convert.ToInt32(user["FestivalAttendanceAmt"]) : 0,
+                        DateCreated = user.ContainsKey("DateCreated") && user["DateCreated"] is Timestamp timestamp
+                                      ? timestamp.ToDateTime()
+                                      : DateTime.MinValue,
+                        Role = role
+                    });
+                }
             }
 
             if (!users.Any())
             {
-                TempData["ErrorMessage"] = "No users found.";
+                TempData["ErrorMessage"] = "No visitors found.";
             }
 
             return View(users);

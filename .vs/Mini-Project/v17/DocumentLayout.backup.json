@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\visitor\\visitordashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\views\\visitor\\viewevents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\visitor\\viewevents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\controllers\\visitorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\controllers\\visitorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,12 +27,20 @@
       "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\admin\\eventdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\models\\admineventsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\models\\admineventsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\views\\admin\\viewallusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\admin\\viewallusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\controllers\\visitorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\controllers\\visitorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\views\\visitor\\viewevents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\views\\visitor\\viewevents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|d:\\repos_uct\\mini-project\\mini-project\\models\\admineventsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A795D5F3-900C-408E-923D-450E647ECAD0}|Mini-Project\\Mini-Project.csproj|solutionrelative:mini-project\\models\\admineventsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,29 +54,31 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "site.css",
               "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Mini-Project\\wwwroot\\css\\site.css",
               "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\wwwroot\\css\\site.css",
               "RelativeToolTip": "Mini-Project\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAiwMYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAMYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-02-06T17:19:14.328Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AdminDashboard.cshtml",
               "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Admin\\AdminDashboard.cshtml",
               "RelativeDocumentMoniker": "Mini-Project\\Views\\Admin\\AdminDashboard.cshtml",
               "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Admin\\AdminDashboard.cshtml",
               "RelativeToolTip": "Mini-Project\\Views\\Admin\\AdminDashboard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-10T14:35:25.532Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -78,10 +88,11 @@
               "RelativeDocumentMoniker": "Mini-Project\\Controllers\\AdminController.cs",
               "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Mini-Project\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAswDEAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T16:01:21.214Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -91,10 +102,11 @@
               "RelativeDocumentMoniker": "Mini-Project\\Views\\Admin\\EventDetails.cshtml",
               "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Admin\\EventDetails.cshtml",
               "RelativeToolTip": "Mini-Project\\Views\\Admin\\EventDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwDgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-15T13:39:16.993Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -102,9 +114,9 @@
               "Title": "VisitorDashboard.cshtml",
               "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Visitor\\VisitorDashboard.cshtml",
               "RelativeDocumentMoniker": "Mini-Project\\Views\\Visitor\\VisitorDashboard.cshtml",
-              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Visitor\\VisitorDashboard.cshtml",
-              "RelativeToolTip": "Mini-Project\\Views\\Visitor\\VisitorDashboard.cshtml",
-              "ViewState": "AgIAAPYAAAAAAAAAAAAAAFkAAAAGAAAAAAAAAA==",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Visitor\\VisitorDashboard.cshtml*",
+              "RelativeToolTip": "Mini-Project\\Views\\Visitor\\VisitorDashboard.cshtml*",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAmwAIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-12T10:40:21.195Z",
               "IsPinned": true,
@@ -112,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "ViewEvents.cshtml",
               "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Visitor\\ViewEvents.cshtml",
               "RelativeDocumentMoniker": "Mini-Project\\Views\\Visitor\\ViewEvents.cshtml",
@@ -121,25 +133,51 @@
               "ViewState": "AgIAAH4AAAAAAAAAAAAAAFAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-13T14:44:00.89Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VisitorController.cs",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\VisitorController.cs",
+              "RelativeDocumentMoniker": "Mini-Project\\Controllers\\VisitorController.cs",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\VisitorController.cs",
+              "RelativeToolTip": "Mini-Project\\Controllers\\VisitorController.cs",
+              "ViewState": "AgIAAB4BAAAAAAAAAADwvy0BAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T10:59:06.885Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "VisitorController.cs",
-              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\VisitorController.cs",
-              "RelativeDocumentMoniker": "Mini-Project\\Controllers\\VisitorController.cs",
-              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\VisitorController.cs",
-              "RelativeToolTip": "Mini-Project\\Controllers\\VisitorController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAuwBgAAAAoAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Mini-Project\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Mini-Project\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAYwFEAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T10:59:06.885Z",
-              "IsPinned": true
+              "WhenOpened": "2025-02-27T17:05:50.499Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "ViewAllUsers.cshtml",
+              "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Admin\\ViewAllUsers.cshtml",
+              "RelativeDocumentMoniker": "Mini-Project\\Views\\Admin\\ViewAllUsers.cshtml",
+              "ToolTip": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Views\\Admin\\ViewAllUsers.cshtml",
+              "RelativeToolTip": "Mini-Project\\Views\\Admin\\ViewAllUsers.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-27T16:43:31.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "AdminEventsViewModel.cs",
               "DocumentMoniker": "D:\\repos_uct\\Mini-Project\\Mini-Project\\Models\\AdminEventsViewModel.cs",
               "RelativeDocumentMoniker": "Mini-Project\\Models\\AdminEventsViewModel.cs",
