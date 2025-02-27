@@ -24,8 +24,8 @@ The One City Festival Management System is a web-based platform developed using 
 2. **View Visitor List:** See all registered visitors attending the festival.
 3. **Manage Event Attendance:** View RSVPs for each event.
 4. **Dashboard & Reports:**
-   - **Festival Dashboard:** Displays key visitor demographics (e.g., age, gender) and event statistics (e.g., attendance per event).
-   - **Event Dashboard:** Displays event ratings, recommendations, comments, and visitor demographics for each event.
+   - **Admin Dashboard:** Displays key visitor demographics (e.g., age, gender) and event stats.
+   - **Visitor Dashboard:** Displays event ratings, recommendations, comments for each event.
 
 ## Technologies Used
 - **C# .NET Framework** (ASP.NET MVC) for backend development
@@ -54,14 +54,8 @@ The One City Festival Management System is a web-based platform developed using 
 - **Users** (Stores visitor and admin details)
 - **Events** (Stores event details, categories, and limits)
 - **RSVPs** (Stores visitor registrations for events)
-- **Feedback** (Stores event ratings, recommendations, and comments)
-
-## Event Categories (Predefined)
-1. Music & Concerts
-2. Arts & Exhibitions
-3. Food & Drink
-4. Sports & Outdoor Activities
-5. Workshops & Seminars
+- **Ratings** (Stores event ratings, recommendations)
+- **Comments** (Stores event comments)  
 
 ## Future Enhancement possibilities that I see viable
 - Implement a **waiting list** for full events.
