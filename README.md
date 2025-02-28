@@ -9,6 +9,9 @@
 ## Project Overview
 The One City Festival Management System is a web-based platform developed using **C# .NET Framework**, **ASP.NET MVC**, **Firebase Authentication**, and **Firestore Cloudstore**. This system enables visitors to sign up for a festival, register for events, provide feedback, and allows administrators to manage the festival efficiently.
 
+## Website Link
+https://mini-project20250228010550.azurewebsites.net
+
 ## Features
 
 ### Visitor Features:
