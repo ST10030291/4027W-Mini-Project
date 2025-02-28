@@ -65,6 +65,37 @@ https://mini-project20250228010550.azurewebsites.net
 - Add **email notifications** for event reminders.
 - Integrate **real-time updates** for RSVP status.
 
+## REFERENCES
+C# Documentation (Microsoft)
+https://learn.microsoft.com/en-us/dotnet/csharp/
+
+Firebase Documentation (Official)
+https://firebase.google.com/docs
+
+ASP.NET MVC Overview (Microsoft)
+https://learn.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction-to-aspnet-mvc
+
+Firebase SDK for .NET (Official)
+https://firebase.google.com/docs/admin/setup#net
+
+Introduction to MVC in C#
+https://www.tutorialspoint.com/asp.net_mvc/asp.net_mvc_introduction.htm
+
+How to Use Firebase with C#
+https://medium.com/@kamalkd/Firebase-with-C-sharp-7c7cb139ebf1
+
+Firebase Authentication with C# (TechNet)
+https://techwhale.in/firebase-authentication-using-csharp/
+
+Creating a Simple ASP.NET MVC Application (TutorialsPoint)
+https://www.tutorialspoint.com/asp.net_mvc/asp.net_mvc_create_first_application.htm
+
+C# Firebase Realtime Database Integration
+https://csharp.hotexamples.com/examples/Firebase.Database/FirebaseDatabase/Set/csharp-firebase-database-set-method-examples.html
+
+C# and Firebase Firestore Integration Tutorial
+https://www.dev.to/rookies/firebase-firestore-integration-in-net-5-app-4f42
+
 ## License
 This project is for academic purposes only.
 
